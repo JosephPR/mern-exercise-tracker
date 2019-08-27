@@ -41,7 +41,7 @@ export default class CreateUser extends Component {
     const { username } = this.state
     return (
       <div>
-        <h3>Create New Exercise log</h3>
+        <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className='form-group'>
             <label>Username: </label>
@@ -56,7 +56,7 @@ export default class CreateUser extends Component {
               </div>
           </div>
               <div className='form-group'>
-                <input type='submit' value='Create User' className='btn btn-primary' />
+                <input type='submit' value='Create User' className='btn btn-outline-primary' />
               </div>
 
         </form>

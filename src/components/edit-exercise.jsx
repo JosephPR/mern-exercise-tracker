@@ -10,7 +10,8 @@ export default class EditExercise extends Component {
     this.state = {
         username: '',
         description: '',
-        duration: 0,
+        duration: '',
+        weight: 0,
         date: new Date(),
         users: []
     }
@@ -23,6 +24,7 @@ export default class EditExercise extends Component {
         username: res.data.username,
         description: res.data.description,
         duration: res.data.duration,
+        weight: res.data.weight,
         date: new Date(res.data.date),
       })
     })
@@ -54,6 +56,11 @@ export default class EditExercise extends Component {
       duration: e.target.value
     })
   }
+  onChangeWeight = (e) => {
+    this.setState({
+      weight: e.target.value
+    })
+  }
   onChangeDate = (date) => {
     this.setState({
       date: date
@@ -66,6 +73,7 @@ export default class EditExercise extends Component {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
+      weight: this.state.weight,
       date: this.state.date,
     }
     console.log(exercise)
@@ -77,7 +85,7 @@ export default class EditExercise extends Component {
   }
 
   render() {
-    const {username, description, duration,date} = this.state
+    const {username, description, duration, weight, date} = this.state
     return (
       <div>
         <h3>Edit Exercise log</h3>
@@ -112,13 +120,23 @@ export default class EditExercise extends Component {
                />
           </div>
           <div className='form-group'>
-            <label>Duration(in minutes): </label>
+            <label>Sets(reps): </label>
             <input
                type='text'
                required
                className='form-control'
                value={duration}
                onChange={this.onChangeDuration}
+               />
+          </div>
+          <div className='form-group'>
+            <label>Weight(in lbs): </label>
+            <input
+               type='text'
+               required
+               className='form-control'
+               value={weight}
+               onChange={this.onChangeWeight}
                />
           </div>
           <div className='form-group'>
@@ -132,7 +150,7 @@ export default class EditExercise extends Component {
           </div>
 
           <div className='form-group'>
-            <input type='submit' value='Edit Exercise Log' className='btn btn-primary' />
+            <input type='submit' value='Edit Exercise Log' className='btn btn-outline-primary' />
           </div>
 
         </form>

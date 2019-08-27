@@ -10,7 +10,8 @@ export default class CreateExercise extends Component {
     this.state = {
         username: '',
         description: '',
-        duration: 0,
+        duration: '',
+        weight: 0,
         date: new Date(),
         users: []
     }
@@ -43,6 +44,11 @@ export default class CreateExercise extends Component {
       duration: e.target.value
     })
   }
+  onChangeWeight = (e) => {
+    this.setState({
+      weight: e.target.value
+    })
+  }
   onChangeDate = (date) => {
     this.setState({
       date: date
@@ -55,6 +61,7 @@ export default class CreateExercise extends Component {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
+      weight: this.state.weight,
       date: this.state.date,
     }
     console.log(exercise)
@@ -66,7 +73,7 @@ export default class CreateExercise extends Component {
   }
 
   render() {
-    const {username, description, duration,date} = this.state
+    const {username, description, duration, weight, date} = this.state
     return (
       <div>
         <h3>Create New Exercise log</h3>
@@ -101,13 +108,23 @@ export default class CreateExercise extends Component {
                />
           </div>
           <div className='form-group'>
-            <label>Duration(in minutes): </label>
+            <label>Sets/Reps: </label>
             <input
                type='text'
                required
                className='form-control'
                value={duration}
                onChange={this.onChangeDuration}
+               />
+          </div>
+          <div className='form-group'>
+            <label>Weight(in lbs): </label>
+            <input
+               type='text'
+               required
+               className='form-control'
+               value={weight}
+               onChange={this.onChangeWeight}
                />
           </div>
           <div className='form-group'>
@@ -121,7 +138,7 @@ export default class CreateExercise extends Component {
           </div>
 
           <div className='form-group'>
-            <input type='submit' value='create Exercise Log' className='btn btn-primary' />
+            <input type='submit' value='Create Exercise Log' className='btn btn-outline-primary' />
           </div>
 
         </form>
