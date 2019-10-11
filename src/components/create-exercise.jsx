@@ -57,12 +57,13 @@ export default class CreateExercise extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    const { username, description, duration, weight, date} = this.state
     const exercise = {
-      username: this.state.username,
-      description: this.state.description,
-      duration: this.state.duration,
-      weight: this.state.weight,
-      date: this.state.date,
+      username,
+      description,
+      duration,
+      weight,
+      date,
     }
     console.log(exercise)
 
