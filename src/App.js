@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,7 +9,19 @@ import CreateExercise from './components/create-exercise';
 import CreateUser from './components/create-user';
 import SignIn from './components/sign-in';
 
-function App() {
+export default class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  componentDidMount() {
+
+  }
+
+render() {
   return (
   <Router>
     <div className='container'>
@@ -24,5 +36,4 @@ function App() {
   </Router>
   );
 }
-
-export default App;
+}
