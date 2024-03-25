@@ -27,7 +27,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:5001/users/add', user)
+    axios.post('https://trackitfit.web.app/users/add', user)
     .then(res => console.log(res.data));
 
 

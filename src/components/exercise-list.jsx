@@ -12,7 +12,7 @@ export default class ExerciseList extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:5001/exercises/')
+    axios.get('https://trackitfit.web.app/exercises/')
     .then(res => {
       this.setState({ exercises: res.data })
     })
@@ -22,7 +22,7 @@ export default class ExerciseList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete(`http://localhost:5001/exercises/${id}`)
+    axios.delete(`https://trackitfit.web.app/exercises/${id}`)
     .then(res => console.log(res.data));
 
     this.setState({

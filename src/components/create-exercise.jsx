@@ -18,7 +18,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5001/users/')
+    axios.get('https://trackitfit.web.app/users/')
       .then(res => {
         if(res.data.length > 0) {
           this.setState({
@@ -67,7 +67,7 @@ export default class CreateExercise extends Component {
     }
     console.log(exercise)
 
-        axios.post('http://localhost:5001/exercises/add', exercise)
+        axios.post('https://trackitfit.web.app/exercises/add', exercise)
         .then(res => console.log(res.data));
 
         window.location ='/'
