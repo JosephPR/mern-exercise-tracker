@@ -3,16 +3,19 @@ import "firebase/firestore";
 import "firebase/auth";
 
 
-const config = {
-    apiKey: "AIzaSyDOk5c6YMaF3Y7HAxDmdNgpm9vFX-Op9Jk",
-    authDomain: "exercise-tracker-dba22.firebaseapp.com",
-    databaseURL: "https://exercise-tracker-dba22.firebaseio.com",
-    projectId: "exercise-tracker-dba22",
-    storageBucket: "exercise-tracker-dba22.appspot.com",
-    messagingSenderId: "863354703036",
-    appId: "1:863354703036:web:7908baa53b55bec46b14b9",
-    measurementId: "G-84EG308CSE"
-  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDOk5c6YMaF3Y7HAxDmdNgpm9vFX-Op9Jk",
+  authDomain: "exercise-tracker-dba22.firebaseapp.com",
+  databaseURL: "https://exercise-tracker-dba22.firebaseio.com",
+  projectId: "exercise-tracker-dba22",
+  storageBucket: "exercise-tracker-dba22.appspot.com",
+  messagingSenderId: "863354703036",
+  appId: "1:863354703036:web:2af68feca6c30d626b14b9",
+  measurementId: "G-W7ZY9F6711"
+};
+
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -39,7 +42,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 }
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 
 export const auth = firebase.auth();
